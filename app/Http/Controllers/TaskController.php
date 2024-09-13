@@ -39,13 +39,11 @@ class TaskController extends Controller
      */
     public function show(Request $request)
     {
-        $busqueda = $request->busqueda;
-        $ticket = Task::where('status','like','%'.$busqueda.'%')
-        ->get();
-        $data=[
-            'busqueda'=>$busqueda
-        ];
-        return view('crud_get', compact('data'));
+        $busqueda = trim($request->get('busqueda'));
+        $data = Task::where('status','like','%'.$busqueda.'%')
+        ->orderBy('status','desc')
+        ->paginate(4);
+        return view('crud', ['data'=>$data]);
     }
 
     /**
