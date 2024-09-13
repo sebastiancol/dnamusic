@@ -49,6 +49,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if (count($data)<=0 )
+                                    <tr>
+                                        <td colspan="5">no hay registros que coindidan</td>
+                                    </tr>    
+                                @else
+                                    
                             
                                 @foreach ($data as $item)
                                 <tr>
@@ -89,7 +95,7 @@
                                     </td>
                                 </tr> 
                                 @endforeach
-                            
+                                @endif
                             </tbody>
                         </table>
                         
