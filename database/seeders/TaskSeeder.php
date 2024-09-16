@@ -18,6 +18,7 @@ class TaskSeeder extends Seeder
             'title' => 'tarea1',
             'description' =>'nueva taresa',
             'status' =>'creada',
+            'date_final'=>Carbon::now(),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);

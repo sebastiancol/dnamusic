@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('crud')
+@section('task')
 
 
     @if ($mensaje = Session::get('success'))
@@ -17,15 +17,12 @@
                 <h5 class="card-header text-center">LISTADO DE TICKETS </h5>
                 <div class="card-body">
                     <div class="row md-12">
+
                         <table class="table text-center text-uppercase table-bordered" id="myTable">
-                            <div class="col md-7">
-                                <a href="{{ route('crud_create') }}" class="btn btn-primary">
-                                    <span class="fas fa-user-plus"></span> AGREGAR TICKET
-                                </a>
-                            </div>
+                            
                             <br/>
                             <div className="section text-center">
-                                <form action="{{route('crud_show')}}" method="GET">
+                                <form action="{{route('task_show')}}" method="GET">
                                     <div class="form-control">
                                         <div class="col-sm-4">
                                             <input type="text" class="form-control"  name="busqueda" placeholder="buscar producto" >
@@ -38,12 +35,22 @@
                                 </form>
                             
                             </div>
+                            <br/>
+
+                            <div class="col md-7">
+                                <a href="{{ route('task_create') }}" class="btn btn-primary">
+                                    <span class="fas fa-user-plus"></span> AGREGAR TICKET
+                                </a>
+                            </div>
+
+                            
                             <thead class="table-header">
                                 <tr>
                                     <th scope="col">TITULO</th>
                                     <th scope="col">DESCRIPCION</th>
                                     <th scope="col">ESTADO</th>
                                     <th scope="col">FECHA CREACION</th> 
+                                    <th scope="col">FECHA FIN</th> 
                                     <th scope="col">FECHA ACTUALIZACION</th> 
                                     <th scope="col">Operaciones</th>
                                 </tr>
@@ -65,7 +72,7 @@
                                     <td>{{ $item->updated_at}}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-">
-                                            <a class="" href="{{ route('crud_edit', $item->id) }}">EDITAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                            <a class="" href="{{ route('task_edit', $item->id) }}">EDITAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                                         </button>
                                                                                     
                                         
@@ -85,7 +92,7 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
                                                         <button type="button" class="btn btn-primary">
-                                                            <a class="" href="{{ route('crud_delete', $item->id) }}">CONFIRMAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                                            <a class="" href="{{ route('task_delete', $item->id) }}">CONFIRMAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                                                         </button>
                                                     </div>
                                                 </div>

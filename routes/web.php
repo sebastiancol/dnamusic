@@ -25,13 +25,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::controller(TaskController::class)->group( function(){
 
-    Route::get('crudget',  'index')->name('crud_get');
-    Route::get('crudcreate','create')->name('crud_create');
-    Route::get('crudshow','show')->name('crud_show');
-    Route::post('crudstore','store')->name('crud_store');
-    Route::get('crudedit/{id}', 'edit')->name('crud_edit');
-    Route::post('crudupdate/{id}', 'update')->name('crud_update');
-    Route::get('cruddelete/{id}','destroy')->name('crud_delete');
+    Route::get('taskget',  'index')->name('task_get');
+    Route::get('taskcreate','create')->name('task_create');
+    Route::get('taskshow','show')->name('task_show');
+    Route::post('taskstore','store')->name('task_store');
+    Route::get('taskedit/{id}', 'edit')->name('task_edit');
+    Route::post('taskupdate/{id}', 'update')->name('task_update');
+    Route::get('taskdelete/{id}','destroy')->name('task_delete');
     Route::get('cancel','cancel')->name('cancel');
 
-})->middleware('control');
+});
+//Auth::routes();
+
+

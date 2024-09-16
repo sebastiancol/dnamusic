@@ -14,9 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('crud_get') }}" class="btn btn-primary">
-                        <span class="fas fa-user-plus"></span> VER TICKETS
-                    </a>
+                    <a href={{route('task_get')}} class="button button-primary"></a>
                 </div>
             </div>
         </div>
