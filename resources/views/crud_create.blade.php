@@ -23,6 +23,10 @@
                         <label for="nom" ></label>
                         <input required type="text" id="Lname" name="status" placeholder="Estado" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label for="nom" ></label>
+                        <input required type="date" id="Lname" name="status" placeholder="Fecha Fin" class="form-control">
+                    </div>
                               
                     <div class="form-group mt-5">
                         <button type="submit"  class="btn btn-success btn-block entry">REGISTRO</button>

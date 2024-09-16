@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
-use PHPUnit\Framework\Attributes\Ticket;
 
 class TaskController extends Controller
 {
@@ -31,7 +30,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         Task::create($request->all());
-        return redirect()->route('crud_get')->with('success','creado con exito ');
+        return redirect()->route('task_get')->with('success','creado con exito ');
     }
 
     /**
@@ -52,7 +51,7 @@ class TaskController extends Controller
     public function edit(string $id)
     {
         $data= Task::findOrFail($id);
-        return view('crud_edit', compact('data'));
+        return view('task_edit', compact('data'));
     }
 
     /**
@@ -63,7 +62,7 @@ class TaskController extends Controller
         $data = Task::findOrFail($id);
         $data->update($request->all());
         
-        return redirect()->route('crud_get')->with('success', 'actualizado con exito');
+        return redirect()->route('task_get')->with('success', 'actualizado con exito');
     }
     
     /**
@@ -73,11 +72,11 @@ class TaskController extends Controller
     {
         $data = Task::findOrFail($id);
         $data->delete();
-        return redirect()->route('crud_get')->with('success', 'Eliminado con exito!');
+        return redirect()->route('task_get')->with('success', 'Eliminado con exito!');
     }
 
     public function cancel()
     {
-        return redirect()->route('crud_get');
+        return redirect()->route('task_get');
     }
 }
