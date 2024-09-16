@@ -1,13 +1,13 @@
 @extends('layout')
 
-@section('crud')
+@section('task')
 
 <div class="row m-5">
     <div class="col-8 mx-auto">
         <div class="card">
             <h3 class="card-title text-center">REGISTRAR</h3>
             <div class="card-body">
-                <form  method="post" action="{{ route('crud_store')}}" class="color" id="register">
+                <form  method="post" action="{{ route('task_store')}}" class="color" id="register">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
                     <div class="form-group">

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href={{route('task_get')}} class="button button-primary"></a>
+                    <a href={{route('task_get')}} class="button button-primary">TAREAS</a>
                 </div>
             </div>
         </div>

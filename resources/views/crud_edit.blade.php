@@ -1,13 +1,13 @@
 @extends('layout')
 
-@section('crud')
+@section('task')
 
 <div class="row m-5">
     <div class="col-8 mx-auto">
         <div class="card">
             <h3 class="card-title text-center">ACTUALIZAR</h3>
             <div class="card-body">
-                <form action="{{ route('crud_update', $data->id) }}" method="POST">
+                <form action="{{ route('task_update', $data->id) }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="doc"></label>

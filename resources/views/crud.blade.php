@@ -70,6 +70,7 @@
                                     <td>{{ $item->status}}</td>
                                     <td>{{ $item->created_at}}</td>
                                     <td>{{ $item->updated_at}}</td>
+                                    <td>{{ $item->updated_at}}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-">
                                             <a class="" href="{{ route('task_edit', $item->id) }}">EDITAR<i class="fa fa-pencil-square" aria-hidden="true"></i></a>
