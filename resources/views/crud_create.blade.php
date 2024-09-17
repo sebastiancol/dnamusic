@@ -19,13 +19,13 @@
                         <label for="nom" ></label>
                         <input required type="text" id="fnom" name="description" placeholder="Descripcion" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="nom" ></label>
                         <input required type="text" id="Lname" name="status" placeholder="Estado" class="form-control">
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label for="nom" ></label>
-                        <input required type="date" id="Lname" name="status" placeholder="Fecha Fin" class="form-control">
+                        <input required type="date" id="date_final" name="date_final" placeholder="Fecha Fin" class="form-control">
                     </div>
                               
                     <div class="form-group mt-5">

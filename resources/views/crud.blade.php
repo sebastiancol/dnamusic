@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('task')
 
@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="row md-12">
 
-                        <table class="table text-center text-uppercase table-bordered" id="myTable">
+                        <table class="table-primary text-center text-uppercase table-bordered" id="myTable">
                             
                             <br/>
                             <div className="section text-center">
@@ -67,9 +67,15 @@
                                 <tr>
                                     <td>{{ $item->title}}</td>
                                     <td>{{ $item->description}}</td>
-                                    <td>{{ $item->status}}</td>
+                                    @if ($item->date_final>null)
+                                        <td>PENDIENTE</td>
+                                    @elseif($item->date_final<=date_final)
+                                        <td>EN CRUSO</td>
+                                    @else
+                                        <td>COMPLETADA</td>    
+                                    @endif
                                     <td>{{ $item->created_at}}</td>
-                                    <td>{{ $item->updated_at}}</td>
+                                    <td>{{ $item->date_final}}</td>
                                     <td>{{ $item->updated_at}}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-">

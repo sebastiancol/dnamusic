@@ -39,8 +39,8 @@ class TaskController extends Controller
     public function show(Request $request)
     {
         $busqueda = trim($request->get('busqueda'));
-        $data = Task::where('status','like','%'.$busqueda.'%')
-        ->orderBy('status','desc')
+        $data = Task::where('title','like','%'.$busqueda.'%')
+        ->orderBy('title','desc')
         ->paginate(4);
         return view('crud', ['data'=>$data]);
     }
@@ -51,7 +51,7 @@ class TaskController extends Controller
     public function edit(string $id)
     {
         $data= Task::findOrFail($id);
-        return view('task_edit', compact('data'));
+        return view('crud_edit', compact('data'));
     }
 
     /**

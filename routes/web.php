@@ -35,6 +35,6 @@ Route::controller(TaskController::class)->group( function(){
     Route::get('cancel','cancel')->name('cancel');
 
 });
-//Auth::routes();
+Auth::routes();
 
 

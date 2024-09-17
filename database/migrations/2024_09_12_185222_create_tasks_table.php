@@ -16,8 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->unique()->nullable();
             $table->string('title');
             $table->string('description');
-            $table->string('status');
-            $table->date('date_final');
+            $table->dateTime('date_final');
             $table->timestamps();
         });
     }
